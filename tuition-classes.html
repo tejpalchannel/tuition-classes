@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8th 9th 10th Tuition Classes in Nagpur | School Tuition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #0d1117;
+            --primary-light: #ffffff;
+            --accent-blue: #0ea5e9;
+            --accent-purple: #7c3aed;
+            --accent-orange: #f97316;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --bg-light: #f8fafc;
+            --bg-subtle: #f1f5f9;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--primary-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0d1117 100%);
+            color: white;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(124, 58, 237, 0.2);
+            border: 1px solid var(--accent-purple);
+            border-radius: 20px;
+            color: #a78bfa;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: max-content;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            margin: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(124, 58, 237, 0.4);
+        }
+
+        /* Content Section */
+        .content-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            border-color: var(--accent-purple);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .info-card::before {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            margin: 0 auto 1rem;
+            border-radius: 2px;
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .info-card p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .profile-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-card p {
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            background: var(--bg-light);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .why-choose h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .features-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .features-list li {
+            padding-left: 2rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-blue) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .contact-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contact-section .btn {
+            background: white;
+            color: var(--accent-purple);
+            font-weight: 700;
+        }
+
+        .contact-section .btn:hover {
+            background: #f1f5f9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-section {
+                padding: 2rem 1rem;
+            }
+        }
+
+        .placeholder {
+            background: var(--bg-subtle);
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-style: italic;
+            color: var(--accent-purple);
+            font-weight: 600;
+        }
+        /* Testimonials */
+        .testimonials {
+            margin: 3rem 0;
+        }
+
+            .testimonials h3 {
+                font-size: 1.8rem;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .stars {
+            color: var(--accent-orange);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .testimonial-grade {
+            font-size: 0.85rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+            .profile-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge"><h1>🎓 Darsh Education Academy</h1></div>
+            <h1>8th, 9th & 10th <span>Tuition Classes</span></h1>
+            <h1>State Board/CBSE</h1>
+            <p class="subtitle">
+                Helping students understand concepts clearly, practice regularly, and prepare confidently for their exams.
+            </p>
+            <button class="btn btn-primary" onclick="document.querySelector('.contact-section').scrollIntoView({behavior: 'smooth'})">Enroll Now</button>
+            <button class="btn btn-primary" onclick="alert('Details:\n\nClasses: 8th, 9th & 10th\nState Board/CBSE\nMode: [Online / Home Tutor]\nLocation: Nagpur\n\nContact below for full details')">View Details</button>
+        </div>
+    </section>
+
+    <!-- Founder/Tutor Profile -->
+    <div class="content-section">
+        <div class="profile-card">
+            <div class="profile-image"><img src="tejpal.jpg" alt="Tejsingh Palharya"></div>
+            <h3><span class="placeholder">Tejsingh Palharya</span></h3>
+            <p><span class="placeholder">Qualification -  B.Sc., MCA, 20+ Years Professional Experience & 5+ Years Teaching Experience]</span></p>
+            <p style="font-size: 0.95rem; line-height: 1.6;">
+                <span class="placeholder">Focused on helping students understand concepts clearly through simple explanations, regular practice, and personal attention. Provides guidance to students of Different Classes with a focus on strong fundamentals and exam preparation.</span>
+            </p>
+        </div>
+    </div>
+    <div class="content-section">
+        <!-- Classes Overview -->
+        <div class="section-header">
+            <h2 style="color: var(--accent-blue);">Subjects We Teach</h2>
+            <p>Focused tuition for Mathematics, Science & English for 8th, 9th & 10th standard students in Nagpur.</p>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Mathematics</h3>
+                <p>Build strong fundamentals and understand concepts clearly. Regular practice helps students improve problem-solving skills and prepare confidently for exams.</p>
+            </div>
+            <div class="info-card">
+                <h3>Science</h3>
+                <p>Learn important concepts through simple explanations and regular practice. Focus on understanding, application, and exam preparation.</p>
+            </div>
+            <div class="info-card">
+                <h3>English</h3>
+                <p>Improve grammar, reading, writing, and comprehension skills. Regular practice with focused guidance helps students prepare effectively for school and board exams.</p>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="content-section">
+            <!-- Classes Overview -->
+            <div class="section-header">
+                <h2>Tuition Classes for School Students</h2>
+                <p>Comprehensive coaching for 8th, 9th & 10th standard students in Nagpur</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>8th Class Tuition</h3>
+                    <p>Strong foundation building with focus on core concepts. Prepare for high school with confidence and clarity.</p>
+                </div>
+                <div class="info-card">
+                    <h3>9th Class Tuition</h3>
+                    <p>Build advanced problem-solving skills. Structured guidance with regular practice and mock tests.</p>
+                </div>
+                <div class="info-card">
+                    <h3>10th Class Tuition</h3>
+                    <p>Board exam preparation with intensive coaching. Focus on all important chapters and exam patterns.</p>
+                </div>
+            </div>
+            </div>
+            <!-- Why Choose Section -->
+            <div class="why-choose">
+                <h3>Our Approach to Tuition Classes</h3>
+                <ul class="features-list">
+                    <li>Personal attention for each student</li>
+                    <li>Focus on concept clarity</li>
+                    <li>Regular practice and assignments</li>
+                    <li>Exam preparation guidance</li>
+                    <li>Doubt-clearing sessions</li>
+                    <li>Progress tracking and feedback</li>
+                </ul>
+            </div>
+
+            <!-- Class Details -->
+            <div class="section-header" style="margin-top: 3rem;">
+                <h2>Program Details</h2>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Subjects</h3>
+                    <p class="placeholder">Subjects -  Math, Science & English </p>
+                </div>
+                <div class="info-card">
+                    <h3>Location</h3>
+                    <p class="placeholder">Saoner & Nagpur</p>
+                </div>
+                <div class="info-card">
+                    <h3>Mode</h3>
+                    <p class="placeholder">[Offline / Online / Home Tutor]</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="content-section">
+            <div class="testimonials">
+                <h3>Parents Love Our Classes</h3>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">
+                            "<span class="placeholder">[Parent quote - e.g., My son went from failing to scoring 85% in just 3 months!]</span>"
+                        </p>
+                        <div class="testimonial-author"><span class="placeholder">[Parent Name]</span></div>
+                        <div class="testimonial-grade">Class 8 Math Parent</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">
+                            "<span class="placeholder">[Parent quote - e.g., Finally found someone who explains concepts clearly. My daughter is confident now!]</span>"
+                        </p>
+                        <div class="testimonial-author"><span class="placeholder">[Parent Name]</span></div>
+                        <div class="testimonial-grade">Class 9 Science Parent</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">
+                            "<span class="placeholder">[Parent quote - e.g., The personalized approach made all the difference. Highly recommended!]</span>"
+                        </p>
+                        <div class="testimonial-author"><span class="placeholder">[Parent Name]</span></div>
+                        <div class="testimonial-grade">Class 10 Board Exam</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2>Ready to Enroll?</h2>
+            <div class="contact-info">
+                <p><strong>For admission and details, contact:</strong></p>
+                <p style="font-size: 1.4rem; margin: 1rem 0;"><span class="placeholder">+91 7709002380</span></p>
+                <p>Available for tuition classes in <strong>Nagpur</strong></p>
+            </div>
+            <button class="btn" onclick="window.location.href='tel:7709002380'">Call Now</button>
+            <button class="btn" onclick="window.location.href='https://wa.me/7709002380'">WhatsApp</button>
+        </section>
+
+        <!-- Footer -->
+        <footer style="background: #0f172a; color: white; padding: 2rem; text-align: center; font-size: 0.9rem;">
+            <p style="margin-bottom: 1rem;">School Tuition Classes for 8th, 9th & 10th Standard Students in Nagpur</p>
+            <p style="color: #94a3b8;">
+                <strong><p>© 2026 Darsh Education Academy. All Rights Reserved.</p></strong>
+            </p>
+        </footer>
+</body>
+</html>
